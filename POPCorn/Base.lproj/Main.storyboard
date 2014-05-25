@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NPm-5R-gtc"/>
+                    <navigationItem key="navigationItem" title="Scale" id="NPm-5R-gtc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1M-p9-g6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
