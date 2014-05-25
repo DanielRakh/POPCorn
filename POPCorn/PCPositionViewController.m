@@ -38,7 +38,14 @@
     if (anim) {
         return;
     }
-    BOOL isButtonAtStartingPosition = (sender.frame.origin.x == 20) ? YES : NO;
+    
+    // The button doesn't always return to exactly x = 20;
+    CGFloat frameOffset = sender.frame.origin.x - 20.0;
+    BOOL isButtonAtStartingPosition = NO;
+    if (fabsf(frameOffset) < .1) {
+        isButtonAtStartingPosition = YES;
+    }
+    
     NSNumber *buttonValue = [self.numberFormatter numberFromString:sender.currentTitle];
     int velocity = (isButtonAtStartingPosition) ? buttonValue.intValue : -1 * buttonValue.intValue;
     POPDecayAnimation *animation = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
