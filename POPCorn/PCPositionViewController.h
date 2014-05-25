@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PCCircleView;
 
 @interface PCPositionViewController : UIViewController
+@property (weak, nonatomic) IBOutlet PCCircleView *circlePositionX;
 
 @end
