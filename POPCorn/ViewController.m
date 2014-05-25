@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.properties = @[@"First",@"Second",@"Third",@"Fourth"].mutableCopy;
+    self.properties = @[@"Position",@"Scale",@"Third",@"Fourth"].mutableCopy;
 
 }
 
@@ -47,5 +47,20 @@
     return cell;
     
 }
+
+#pragma mark - Table View Delegate 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *propertyName = self.properties[indexPath.row];
+    
+    if ([propertyName isEqualToString:@"Position"]) {
+        [self performSegueWithIdentifier:@"pushToPosition" sender:self];
+    } else if ([propertyName isEqualToString:@"Scale"]) {
+        [self performSegueWithIdentifier:@"pushToScale" sender:self];
+    }
+    
+}
+
 
 @end
