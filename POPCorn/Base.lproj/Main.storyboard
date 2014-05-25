@@ -71,7 +71,7 @@
         <!--Position-->
         <scene sceneID="WvN-ZR-LoJ">
             <objects>
-                <viewController id="HG3-hi-rS8" userLabel="Position" sceneMemberID="viewController">
+                <viewController id="HG3-hi-rS8" userLabel="Position" customClass="PCPositionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XcA-uu-Qxl"/>
                         <viewControllerLayoutGuide type="bottom" id="lvs-fz-uis"/>
@@ -81,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZYK-EZ-T78"/>
+                    <navigationItem key="navigationItem" title="Position" id="ZYK-EZ-T78"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvI-wu-Rbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
