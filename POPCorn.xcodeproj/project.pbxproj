@@ -24,6 +24,7 @@
 		8ECDAD3F193271C8003B8180 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ECDAD3D193271C8003B8180 /* InfoPlist.strings */; };
 		8ECDAD41193271C8003B8180 /* POPCornTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDAD40193271C8003B8180 /* POPCornTests.m */; };
 		8ECDAD4C1932790D003B8180 /* PCScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDAD4B1932790D003B8180 /* PCScaleViewController.m */; };
+		8ECDAD5119327D9C003B8180 /* PCCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDAD5019327D9C003B8180 /* PCCircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		8ECDAD40193271C8003B8180 /* POPCornTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POPCornTests.m; sourceTree = "<group>"; };
 		8ECDAD4A1932790D003B8180 /* PCScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCScaleViewController.h; sourceTree = "<group>"; };
 		8ECDAD4B1932790D003B8180 /* PCScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCScaleViewController.m; sourceTree = "<group>"; };
+		8ECDAD4F19327D9C003B8180 /* PCCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleView.h; sourceTree = "<group>"; };
+		8ECDAD5019327D9C003B8180 /* PCCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleView.m; sourceTree = "<group>"; };
 		C03CD7F4A1584381A2B4F2FE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4C8E37B9664DEB99D8FB0B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,9 +150,9 @@
 				8ECDAD27193271C8003B8180 /* Main.storyboard */,
 				8ECDAD2A193271C8003B8180 /* ViewController.h */,
 				8ECDAD2B193271C8003B8180 /* ViewController.m */,
-				61C9E10C19327C3700531975 /* Position */,
-				61C9E10819327C1400531975 /* Scale */,
 				8ECDAD2D193271C8003B8180 /* Images.xcassets */,
+				8ECDAD4E19327D76003B8180 /* Views */,
+				8ECDAD4D19327D5F003B8180 /* Properties */,
 				8ECDAD1C193271C8003B8180 /* Supporting Files */,
 			);
 			path = POPCorn;
@@ -182,6 +185,24 @@
 				8ECDAD3D193271C8003B8180 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8ECDAD4D19327D5F003B8180 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				61C9E10C19327C3700531975 /* Position */,
+				61C9E10819327C1400531975 /* Scale */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		8ECDAD4E19327D76003B8180 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8ECDAD4F19327D9C003B8180 /* PCCircleView.h */,
+				8ECDAD5019327D9C003B8180 /* PCCircleView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +342,7 @@
 				61C9E10B19327C3400531975 /* PCPositionViewController.m in Sources */,
 				8ECDAD26193271C8003B8180 /* AppDelegate.m in Sources */,
 				8ECDAD22193271C8003B8180 /* main.m in Sources */,
+				8ECDAD5119327D9C003B8180 /* PCCircleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
