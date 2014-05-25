@@ -7,7 +7,7 @@
 //
 
 #import "PCPositionViewController.h"
-#import "PCCircleView.h"
+#import "PCCircleButton.h"
 #import <pop/POP.h>
 
 @interface PCPositionViewController ()
@@ -32,7 +32,8 @@
     self.isCirclePositionXAtStartingPoint = YES;
 }
 
-- (IBAction)xPositionButtonDidTouch:(UIButton *)sender
+
+- (IBAction)animatePositionX:(UIButton *)sender
 {
     id anim = [self.circlePositionX pop_animationForKey:@"slideKey"];
     if (anim) {
@@ -43,6 +44,7 @@
     animation.velocity = (self.isCirclePositionXAtStartingPoint) ? @(400) : @(-400);
     self.isCirclePositionXAtStartingPoint = !self.isCirclePositionXAtStartingPoint;
     [self.circlePositionX pop_addAnimation:animation forKey:@"slideKey"];
+    
 }
 
 @end
