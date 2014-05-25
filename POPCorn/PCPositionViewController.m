@@ -46,19 +46,4 @@
     self.isCirclePositionXAtStartingPoint = !self.isCirclePositionXAtStartingPoint;
     [self.circlePositionX pop_addAnimation:animation forKey:@"slideX"];
 }
-
-- (IBAction)animatePositionY:(UIButton *)sender
-{
-    id anim = [self.circlePositionY pop_animationForKey:@"slideY"];
-    if (anim) {
-        return;
-    }
-    
-    POPDecayAnimation *animation = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    animation.velocity = (self.isCirclePositionYAtStartingPoint) ? @(400) : @(-400);
-    self.isCirclePositionYAtStartingPoint = !self.isCirclePositionYAtStartingPoint;
-    [self.circlePositionY pop_addAnimation:animation forKey:@"slideY"];
-}
-
-
 @end

@@ -11,6 +11,5 @@
 
 @interface PCPositionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet PCCircleButton *circlePositionX;
-@property (weak, nonatomic) IBOutlet PCCircleButton *circlePositionY;
 
 @end
