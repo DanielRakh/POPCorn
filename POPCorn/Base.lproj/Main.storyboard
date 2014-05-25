@@ -52,7 +52,7 @@
         <!--Scale-->
         <scene sceneID="Z5I-8w-W3f">
             <objects>
-                <viewController id="Kct-n0-6Cb" userLabel="Scale" sceneMemberID="viewController">
+                <viewController id="Kct-n0-6Cb" userLabel="Scale" customClass="PCScaleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gZ3-4R-0A6"/>
                         <viewControllerLayoutGuide type="bottom" id="9Qa-e0-3T3"/>
