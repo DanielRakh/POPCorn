@@ -41,8 +41,8 @@
                     <navigationItem key="navigationItem" title="Properties" id="kGk-LV-xtU"/>
                     <connections>
                         <outlet property="tableView" destination="IKG-Oz-vXL" id="wbx-eK-CHn"/>
-                        <segue destination="HG3-hi-rS8" kind="push" identifier="pushToPosition" id="WX8-Sb-A6C"/>
                         <segue destination="NtV-Vj-HPx" kind="push" identifier="pushToScale" id="sxN-xE-ZBG"/>
+                        <segue destination="YLx-X0-9Ob" kind="push" identifier="pushToPosition" id="u3A-xV-HCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -183,7 +183,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50K-if-l1r" customClass="PCCircleButton">
-                                <rect key="frame" x="20" y="299" width="50" height="50"/>
+                                <rect key="frame" x="20" y="280" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="300">
@@ -194,7 +194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7Z-VO-EJM" customClass="PCCircleButton">
-                                <rect key="frame" x="20" y="399" width="50" height="50"/>
+                                <rect key="frame" x="20" y="376" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="400">
@@ -205,7 +205,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-al-pcP" customClass="PCCircleButton">
-                                <rect key="frame" x="20" y="499" width="50" height="50"/>
+                                <rect key="frame" x="20" y="458" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="500">
@@ -218,6 +218,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Decay" id="Kh2-6N-eY6"/>
                     <navigationItem key="navigationItem" title="Position" id="ZYK-EZ-T78"/>
                     <connections>
                         <outlet property="circlePositionX" destination="ff6-ea-kHl" id="sRr-oR-6RC"/>
@@ -225,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvI-wu-Rbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="-452"/>
+            <point key="canvasLocation" x="1528" y="-452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gaf-Sw-WEt">
@@ -264,6 +265,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikg-X0-Jhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002" y="269"/>
+        </scene>
+        <!--Tab Bar Controller - Position-->
+        <scene sceneID="ykA-xm-wmu">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YLx-X0-9Ob" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Position" id="Xnc-fN-2ym"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="T1S-5l-yFh">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HG3-hi-rS8" kind="relationship" relationship="viewControllers" id="ndR-Vf-5cx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4J-V9-NXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002" y="-452"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
