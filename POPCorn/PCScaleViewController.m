@@ -7,6 +7,8 @@
 //
 
 #import "PCScaleViewController.h"
+#import "PCScaleCollectionViewCell.h"
+#import <POP/POP.h>
 
 @interface PCScaleViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -40,9 +42,24 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"KernelCell";
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    PCScaleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     return cell;
 }
+
+#pragma mark - POP Animations
+- (IBAction)animateScale:(UIButton *)sender {
+    
+    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    springAnimation.springBounciness = 20.0;
+    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(2.0, 2.0)];
+    
+    
+//    decayAnimation.fromValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeScale(1.0, 1.0)];
+//    decayAnimation.toValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeScale(3.0, 3.0)];
+    [sender pop_addAnimation:springAnimation forKey:@"springScale"];
+    
+}
+
 /*
 #pragma mark - Navigation
 

@@ -72,7 +72,7 @@
                                     <inset key="sectionInset" minX="12" minY="10" maxX="12" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KernelCell" id="277-s8-fee">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KernelCell" id="277-s8-fee" customClass="PCScaleCollectionViewCell">
                                         <rect key="frame" x="12" y="74" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -86,11 +86,17 @@
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="animateScale:" destination="Kct-n0-6Cb" eventType="touchUpInside" id="6Qx-eg-V9C"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="circleButton" destination="vtc-nH-Ylw" id="elv-eW-kfs"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
