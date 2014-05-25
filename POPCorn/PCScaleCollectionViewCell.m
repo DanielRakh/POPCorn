@@ -15,8 +15,34 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self commonInit];
     }
     return self;
+}
+
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self commonInit];
+
+}
+
+- (void)commonInit {
+    [self roundEdgesToMakeCircle];
+    [self addLabelToCenter];
+}
+
+- (void)addLabelToCenter {
+    self.label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+    self.label.center = CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/2.0);
+    self.label.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.label];
+    
+    
+}
+
+- (void)roundEdgesToMakeCircle {
+    self.layer.cornerRadius = self.bounds.size.width/2.0;
 }
 
 /*

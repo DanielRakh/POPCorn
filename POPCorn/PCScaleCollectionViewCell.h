@@ -11,5 +11,6 @@
 
 @interface PCScaleCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet PCCircleButton *circleButton;
+//@property (weak, nonatomic) IBOutlet PCCircleButton *circleButton;
+@property (nonatomic, strong) UILabel *label;
 @end

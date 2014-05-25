@@ -35,7 +35,7 @@
 
 #pragma mark - Collection View Data Source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 200;
+    return 20;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -43,22 +43,37 @@
     
     static NSString *cellIdentifier = @"KernelCell";
     PCScaleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.label.text = [NSString stringWithFormat:@"%d",indexPath.row];
     return cell;
 }
 
-#pragma mark - POP Animations
-- (IBAction)animateScale:(UIButton *)sender {
+#pragma mark - Collection View Delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-    springAnimation.springBounciness = 20.0;
-    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(2.0, 2.0)];
-    
-    
-//    decayAnimation.fromValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeScale(1.0, 1.0)];
-//    decayAnimation.toValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeScale(3.0, 3.0)];
-    [sender pop_addAnimation:springAnimation forKey:@"springScale"];
-    
+    id selectedObject = [collectionView cellForItemAtIndexPath:indexPath];
+    [self animateObject:selectedObject withSpringBouncines:indexPath.row];
 }
+
+
+#pragma mark - POP Animations
+
+- (void)animateObject:(id)object withSpringBouncines:(CGFloat)springBounciness {
+    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    springAnimation.springBounciness = springBounciness;
+    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
+    [object pop_addAnimation:springAnimation forKey:@"springScale"];
+}
+
+//- (IBAction)animateScaleWithSpringBounciness:(CGFloat)springBounciness sender:(UIButton *)sender {
+//    
+//    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+//    springAnimation.springBounciness = springBounciness;
+//    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(2.0, 2.0)];
+//    
+//    [sender pop_addAnimation:springAnimation forKey:@"springScale"];
+//    
+//}
 
 /*
 #pragma mark - Navigation
