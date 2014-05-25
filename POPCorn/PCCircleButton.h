@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-//@abstract: PCCircleView is a UIView that is a a perfect circle with: **to be added later**
+//@abstract: PCCircleButton is a UIButton that is a a perfect circle with: **to be added later**
 
-@interface PCCircleView : UIView
+@interface PCCircleButton : UIButton
 
 @end

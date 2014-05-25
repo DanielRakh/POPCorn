@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Daniel Rakhamimov. All rights reserved.
 //
 
-#import "PCCircleView.h"
+#import "PCCircleButton.h"
 
-@implementation PCCircleView
+@implementation PCCircleButton
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
