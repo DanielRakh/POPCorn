@@ -11,8 +11,7 @@
 #import <pop/POP.h>
 
 @interface PCPositionViewController ()
-@property (nonatomic, assign) BOOL isCirclePositionXAtStartingPoint;
-@property (nonatomic, assign) BOOL isCirclePositionYAtStartingPoint;
+@property (nonatomic, strong) NSNumberFormatter *numberFormatter;
 @end
 
 @implementation PCPositionViewController
@@ -30,20 +29,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.isCirclePositionXAtStartingPoint = YES;
-    self.isCirclePositionYAtStartingPoint = YES;
+    self.numberFormatter = [[NSNumberFormatter alloc] init];
 }
 
 - (IBAction)animatePositionX:(UIButton *)sender
 {
-    id anim = [self.circlePositionX pop_animationForKey:@"slideX"];
+    id anim = [sender pop_animationForKey:@"slideX"];
     if (anim) {
         return;
     }
-    
+    BOOL isButtonAtStartingPosition = (sender.frame.origin.x == 20) ? YES : NO;
+    NSNumber *buttonValue = [self.numberFormatter numberFromString:sender.currentTitle];
+    int velocity = (isButtonAtStartingPosition) ? buttonValue.intValue : -1 * buttonValue.intValue;
     POPDecayAnimation *animation = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    animation.velocity = (self.isCirclePositionXAtStartingPoint) ? @(400) : @(-400);
-    self.isCirclePositionXAtStartingPoint = !self.isCirclePositionXAtStartingPoint;
-    [self.circlePositionX pop_addAnimation:animation forKey:@"slideX"];
+    animation.velocity = @(velocity);
+    [sender pop_addAnimation:animation forKey:@"slideX"];
 }
 @end
