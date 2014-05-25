@@ -40,7 +40,7 @@
     }
     
     POPDecayAnimation *animation = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    animation.velocity = (self.isCirclePositionXAtStartingPoint) ? @(500) : @(-500);
+    animation.velocity = (self.isCirclePositionXAtStartingPoint) ? @(400) : @(-400);
     self.isCirclePositionXAtStartingPoint = !self.isCirclePositionXAtStartingPoint;
     [self.circlePositionX pop_addAnimation:animation forKey:@"slideKey"];
 }
