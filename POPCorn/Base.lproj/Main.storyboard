@@ -49,6 +49,25 @@
             </objects>
             <point key="canvasLocation" x="537" y="-158"/>
         </scene>
+        <!--Position Spring View Controller - Spring-->
+        <scene sceneID="DhH-CC-Mgp">
+            <objects>
+                <viewController id="ExC-gC-q7T" customClass="PCPositionSpringViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NjV-rM-nXR"/>
+                        <viewControllerLayoutGuide type="bottom" id="xP1-Ka-VF8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xq3-rV-4e7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Spring" id="l2w-Fq-POZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPL-gm-QFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1533" y="-397"/>
+        </scene>
         <!--Scale-->
         <scene sceneID="Z5I-8w-W3f">
             <objects>
@@ -226,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvI-wu-Rbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="-452"/>
+            <point key="canvasLocation" x="1533" y="-1099"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gaf-Sw-WEt">
@@ -279,11 +298,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="HG3-hi-rS8" kind="relationship" relationship="viewControllers" id="ndR-Vf-5cx"/>
+                        <segue destination="ExC-gC-q7T" kind="relationship" relationship="viewControllers" id="f2c-na-GI1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4J-V9-NXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="-452"/>
+            <point key="canvasLocation" x="1084" y="-690"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
