@@ -1,5 +1,5 @@
 //
-//  PCPositionViewController.h
+//  PCPositionDecayViewController.h
 //  POPCorn
 //
 //  Created by David Weissler on 5/25/14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class PCCircleButton;
 
-@interface PCPositionViewController : UIViewController
+@interface PCPositionDecayViewController : UIViewController
 @property (weak, nonatomic) IBOutlet PCCircleButton *circlePositionX;
 
 @end

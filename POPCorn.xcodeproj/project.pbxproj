@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4992952677184BEFA68B2F9D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03CD7F4A1584381A2B4F2FE /* libPods.a */; };
-		61C9E10B19327C3400531975 /* PCPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C9E10A19327C3400531975 /* PCPositionViewController.m */; };
+		61C9E10B19327C3400531975 /* PCPositionDecayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C9E10A19327C3400531975 /* PCPositionDecayViewController.m */; };
 		61C9E10F1932C33000531975 /* PCPositionSpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C9E10E1932C33000531975 /* PCPositionSpringViewController.m */; };
 		8ECDAD16193271C8003B8180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECDAD15193271C8003B8180 /* Foundation.framework */; };
 		8ECDAD18193271C8003B8180 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECDAD17193271C8003B8180 /* CoreGraphics.framework */; };
@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		61C9E10919327C3400531975 /* PCPositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPositionViewController.h; sourceTree = "<group>"; };
-		61C9E10A19327C3400531975 /* PCPositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPositionViewController.m; sourceTree = "<group>"; };
+		61C9E10919327C3400531975 /* PCPositionDecayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPositionDecayViewController.h; sourceTree = "<group>"; };
+		61C9E10A19327C3400531975 /* PCPositionDecayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPositionDecayViewController.m; sourceTree = "<group>"; };
 		61C9E10D1932C33000531975 /* PCPositionSpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPositionSpringViewController.h; sourceTree = "<group>"; };
 		61C9E10E1932C33000531975 /* PCPositionSpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPositionSpringViewController.m; sourceTree = "<group>"; };
 		8ECDAD12193271C8003B8180 /* POPCorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POPCorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,8 +112,8 @@
 		61C9E10C19327C3700531975 /* Position */ = {
 			isa = PBXGroup;
 			children = (
-				61C9E10919327C3400531975 /* PCPositionViewController.h */,
-				61C9E10A19327C3400531975 /* PCPositionViewController.m */,
+				61C9E10919327C3400531975 /* PCPositionDecayViewController.h */,
+				61C9E10A19327C3400531975 /* PCPositionDecayViewController.m */,
 				61C9E10D1932C33000531975 /* PCPositionSpringViewController.h */,
 				61C9E10E1932C33000531975 /* PCPositionSpringViewController.m */,
 			);
@@ -351,7 +351,7 @@
 				8ECDAD4C1932790D003B8180 /* PCScaleViewController.m in Sources */,
 				61C9E10F1932C33000531975 /* PCPositionSpringViewController.m in Sources */,
 				8ECDAD2C193271C8003B8180 /* ViewController.m in Sources */,
-				61C9E10B19327C3400531975 /* PCPositionViewController.m in Sources */,
+				61C9E10B19327C3400531975 /* PCPositionDecayViewController.m in Sources */,
 				8ECDAD26193271C8003B8180 /* AppDelegate.m in Sources */,
 				8ECDAD22193271C8003B8180 /* main.m in Sources */,
 				8ECDAD5119327D9C003B8180 /* PCCircleButton.m in Sources */,

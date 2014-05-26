@@ -170,7 +170,7 @@
         <!--Position-->
         <scene sceneID="WvN-ZR-LoJ">
             <objects>
-                <viewController id="HG3-hi-rS8" userLabel="Position" customClass="PCPositionViewController" sceneMemberID="viewController">
+                <viewController id="HG3-hi-rS8" userLabel="Position" customClass="PCPositionDecayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XcA-uu-Qxl"/>
                         <viewControllerLayoutGuide type="bottom" id="lvs-fz-uis"/>

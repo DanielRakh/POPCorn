@@ -1,20 +1,20 @@
 //
-//  PCPositionViewController.m
+//  PCPositionDecayViewController.m
 //  POPCorn
 //
 //  Created by David Weissler on 5/25/14.
 //  Copyright (c) 2014 Daniel Rakhamimov. All rights reserved.
 //
 
-#import "PCPositionViewController.h"
+#import "PCPositionDecayViewController.h"
 #import "PCCircleButton.h"
 #import <pop/POP.h>
 
-@interface PCPositionViewController ()
+@interface PCPositionDecayViewController ()
 @property (nonatomic, strong) NSNumberFormatter *numberFormatter;
 @end
 
-@implementation PCPositionViewController
+@implementation PCPositionDecayViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
