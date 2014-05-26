@@ -44,7 +44,6 @@
     return header;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"KernelCell";
@@ -67,19 +66,21 @@
 - (void)animateObject:(id)object withSpringBouncines:(CGFloat)springBounciness {
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
     springAnimation.springBounciness = springBounciness;
-    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
+    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];\
+    springAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+        
+        POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+        springAnimation.springBounciness = springBounciness;
+        springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
+        [object pop_addAnimation:springAnimation forKey:@"springScale"];
+        
+        
+    };
     [object pop_addAnimation:springAnimation forKey:@"springScale"];
 }
 
-//- (IBAction)animateScaleWithSpringBounciness:(CGFloat)springBounciness sender:(UIButton *)sender {
-//    
-//    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-//    springAnimation.springBounciness = springBounciness;
-//    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(2.0, 2.0)];
-//    
-//    [sender pop_addAnimation:springAnimation forKey:@"springScale"];
-//    
-//}
+
+
 
 /*
 #pragma mark - Navigation
