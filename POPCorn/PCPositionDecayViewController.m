@@ -52,4 +52,13 @@
     animation.velocity = @(velocity);
     [sender pop_addAnimation:animation forKey:@"slideX"];
 }
+
+- (IBAction)raceButtonDidTouch:(UIButton *)sender {
+    for (UIButton *button in self.view.subviews) {
+        if ([button isKindOfClass:[UIButton class]]) {
+            [self animatePositionX:button];
+        }
+    }
+}
+
 @end
