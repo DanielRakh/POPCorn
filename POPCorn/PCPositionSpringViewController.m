@@ -7,9 +7,11 @@
 //
 
 #import "PCPositionSpringViewController.h"
+#import "PCCircleButton.h"
+#import <pop/POP.h>
 
 @interface PCPositionSpringViewController ()
-
+@property (nonatomic, strong) NSNumberFormatter *numberFormatter;
 @end
 
 @implementation PCPositionSpringViewController
@@ -27,23 +29,30 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.numberFormatter = [[NSNumberFormatter alloc] init];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)animatePositionX:(UIButton *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    id anim = [sender.layer pop_animationForKey:@"slideX"];
+    if (anim) {
+        return;
+    }
+    
+    // The button doesn't always return to exactly x = 20;
+    CGFloat frameOffset = sender.frame.origin.x - 20.0;
+    BOOL isButtonAtStartingPosition = NO;
+    if (fabsf(frameOffset) < .1) {
+        isButtonAtStartingPosition = YES;
+    }
+    CGFloat destinationX = (isButtonAtStartingPosition) ? 200 : 45;
+    
+    NSNumber *buttonValue = [self.numberFormatter numberFromString:sender.currentTitle];
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+    animation.toValue = @(destinationX);
+    animation.springBounciness = buttonValue.floatValue;
+    [sender.layer pop_addAnimation:animation forKey:@"slideX"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
