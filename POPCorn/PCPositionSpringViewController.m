@@ -37,34 +37,33 @@
     [self.speedLabel setText:[NSString stringWithFormat:@"Spring Speed: %i",value.intValue]];
 }
 
-- (IBAction)animatePositionX:(UIButton *)sender
+- (IBAction)animatePositionY:(UIButton *)sender
 {
-    id anim = [sender.layer pop_animationForKey:@"slideX"];
+    id anim = [sender.layer pop_animationForKey:@"slideY"];
     if (anim) {
         return;
     }
     
-    // The button doesn't always return to exactly x = 20;
-    CGFloat frameOffset = sender.frame.origin.x - 20.0;
+    CGFloat positionOffset = sender.layer.position.y - 199;
     BOOL isButtonAtStartingPosition = NO;
-    if (fabsf(frameOffset) < .1) {
+    if (fabsf(positionOffset) < .1) {
         isButtonAtStartingPosition = YES;
     }
-    CGFloat destinationX = (isButtonAtStartingPosition) ? 200 : 45;
+    CGFloat destinationY = (isButtonAtStartingPosition) ? 380 : 199;
     
     NSNumber *buttonValue = [self.numberFormatter numberFromString:sender.currentTitle];
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    animation.toValue = @(destinationX);
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animation.toValue = @(destinationY);
     animation.springBounciness = buttonValue.floatValue;
     animation.springSpeed = self.springSpeedStepper.value;
-    [sender.layer pop_addAnimation:animation forKey:@"slideX"];
+    [sender.layer pop_addAnimation:animation forKey:@"slideY"];
 }
 
 - (IBAction)raceButtonDidTouch:(UIButton *)sender
 {
     for (PCCircleButton *button in self.view.subviews) {
         if ([button isKindOfClass:[PCCircleButton class]]) {
-            [self animatePositionX:button];
+            [self animatePositionY:button];
         }
     }
 }
