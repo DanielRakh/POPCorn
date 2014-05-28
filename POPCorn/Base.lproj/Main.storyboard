@@ -92,7 +92,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KernelCell" id="277-s8-fee" customClass="PCScaleCollectionViewCell">
-                                        <rect key="frame" x="30" y="186" width="50" height="50"/>
+                                        <rect key="frame" x="30" y="122" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -103,7 +103,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="3ZQ-Br-qnu">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="92"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ez7-Zv-Sxj">
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1M-p9-g6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="269"/>
+            <point key="canvasLocation" x="984" y="969"/>
         </scene>
         <!--View Controller - Decay-->
         <scene sceneID="bZ9-bx-odH">
@@ -287,7 +287,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Kct-n0-6Cb" kind="relationship" relationship="viewControllers" id="98K-2B-KUM"/>
                         <segue destination="3FU-jk-vKd" kind="relationship" relationship="viewControllers" id="NzF-lv-XXD"/>
                     </connections>
                 </tabBarController>
