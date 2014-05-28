@@ -10,4 +10,6 @@
 
 @interface PCPositionSpringViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIStepper *springSpeedStepper;
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
 @end

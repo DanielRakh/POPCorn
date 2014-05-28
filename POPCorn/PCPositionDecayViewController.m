@@ -54,8 +54,8 @@
 }
 
 - (IBAction)raceButtonDidTouch:(UIButton *)sender {
-    for (UIButton *button in self.view.subviews) {
-        if ([button isKindOfClass:[UIButton class]]) {
+    for (PCCircleButton *button in self.view.subviews) {
+        if ([button isKindOfClass:[PCCircleButton class]]) {
             [self animatePositionX:button];
         }
     }

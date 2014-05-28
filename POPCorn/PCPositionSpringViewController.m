@@ -32,6 +32,11 @@
     self.numberFormatter = [[NSNumberFormatter alloc] init];
 }
 
+- (IBAction)stepperValueChanged:(UIStepper *)sender {
+    NSNumber *value = [NSNumber numberWithDouble:sender.value];
+    [self.speedLabel setText:[NSString stringWithFormat:@"Spring Speed: %i",value.intValue]];
+}
+
 - (IBAction)animatePositionX:(UIButton *)sender
 {
     id anim = [sender.layer pop_animationForKey:@"slideX"];
@@ -51,8 +56,17 @@
     POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
     animation.toValue = @(destinationX);
     animation.springBounciness = buttonValue.floatValue;
+    animation.springSpeed = self.springSpeedStepper.value;
     [sender.layer pop_addAnimation:animation forKey:@"slideX"];
 }
 
+- (IBAction)raceButtonDidTouch:(UIButton *)sender
+{
+    for (PCCircleButton *button in self.view.subviews) {
+        if ([button isKindOfClass:[PCCircleButton class]]) {
+            [self animatePositionX:button];
+        }
+    }
+}
 
 @end
