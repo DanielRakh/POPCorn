@@ -34,7 +34,7 @@
 
 - (IBAction)animatePositionX:(UIButton *)sender
 {
-    id anim = [sender pop_animationForKey:@"slideX"];
+    id anim = [sender.layer pop_animationForKey:@"slideX"];
     if (anim) {
         return;
     }
@@ -50,7 +50,7 @@
     int velocity = (isButtonAtStartingPosition) ? buttonValue.intValue : -1 * buttonValue.intValue;
     POPDecayAnimation *animation = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
     animation.velocity = @(velocity);
-    [sender pop_addAnimation:animation forKey:@"slideX"];
+    [sender.layer pop_addAnimation:animation forKey:@"slideX"];
 }
 
 - (IBAction)raceButtonDidTouch:(UIButton *)sender {
