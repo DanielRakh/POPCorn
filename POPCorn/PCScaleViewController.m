@@ -18,24 +18,17 @@
 
 @implementation PCScaleViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:NO];
+    self.title = @"Scale";
 }
 
 #pragma mark - Collection View Data Source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return 40;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -44,12 +37,11 @@
     return header;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"KernelCell";
     PCScaleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.label.text = [NSString stringWithFormat:@"%d",indexPath.row+1];
+    cell.label.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
     return cell;
 }
 
@@ -58,28 +50,47 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     id selectedObject = [collectionView cellForItemAtIndexPath:indexPath];
-    [self animateObject:selectedObject withSpringBouncines:indexPath.row];
+    [self animateObject:selectedObject withSpringBouncines:indexPath.item];
 }
+
 
 
 #pragma mark - POP Animations
 
 - (void)animateObject:(id)object withSpringBouncines:(CGFloat)springBounciness {
+    
+    CGFloat bounciness = springBounciness + 1;
+    NSLog(@"%f",bounciness);
+
+    
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-    springAnimation.springBounciness = springBounciness;
+    springAnimation.springBounciness = bounciness;
     springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
+    springAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+        
+        POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+        springAnimation.springBounciness = bounciness;
+        springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
+        [object pop_addAnimation:springAnimation forKey:@"springScale"];
+        
+        
+    };
     [object pop_addAnimation:springAnimation forKey:@"springScale"];
 }
 
-//- (IBAction)animateScaleWithSpringBounciness:(CGFloat)springBounciness sender:(UIButton *)sender {
-//    
-//    POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-//    springAnimation.springBounciness = springBounciness;
-//    springAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(2.0, 2.0)];
-//    
-//    [sender pop_addAnimation:springAnimation forKey:@"springScale"];
-//    
-//}
+
+- (IBAction)animateAll:(id)sender {
+    
+    
+    NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:0];
+    
+    for (NSInteger i = 0; i < numberOfItems; i++) {
+        NSIndexPath *idxPath = [NSIndexPath indexPathForItem:i inSection:0];
+        UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:idxPath];
+        [self animateObject:cell withSpringBouncines:i];
+    }
+}
+
 
 /*
 #pragma mark - Navigation

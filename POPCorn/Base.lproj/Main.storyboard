@@ -115,19 +115,29 @@
                                             </segments>
                                         </segmentedControl>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Speed: 12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCp-eH-9dL">
-                                            <rect key="frame" x="102" y="68" width="116" height="21"/>
+                                            <rect key="frame" x="184" y="67" width="116" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Range:1-20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oT-KE-Gcf">
-                                            <rect key="frame" x="122" y="47" width="76" height="17"/>
+                                            <rect key="frame" x="204" y="46" width="76" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMu-Sp-aPm">
+                                            <rect key="frame" x="20" y="52" width="78" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Animate All">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="animateAll:" destination="Kct-n0-6Cb" eventType="touchUpInside" id="QBQ-0R-n1c"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </collectionReusableView>
                                 <connections>
@@ -139,7 +149,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Spring" id="bua-pm-c2s"/>
-                    <navigationItem key="navigationItem" title="Scale" id="NPm-5R-gtc"/>
+                    <navigationItem key="navigationItem" id="NPm-5R-gtc"/>
                     <connections>
                         <outlet property="collectionView" destination="eI5-Z0-RY6" id="SJi-2w-eMJ"/>
                     </connections>
@@ -265,12 +275,12 @@
             </objects>
             <point key="canvasLocation" x="58" y="-158"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Scale-->
         <scene sceneID="05a-em-XyI">
             <objects>
                 <tabBarController id="NtV-Vj-HPx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="nt8-Rf-sYm"/>
+                    <navigationItem key="navigationItem" title="Scale" id="nt8-Rf-sYm"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZVM-Nv-zKv">
                         <autoresizingMask key="autoresizingMask"/>
