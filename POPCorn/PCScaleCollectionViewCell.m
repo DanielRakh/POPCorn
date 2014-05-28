@@ -7,6 +7,7 @@
 //
 
 #import "PCScaleCollectionViewCell.h"
+#import <POP/POP.h>
 
 @implementation PCScaleCollectionViewCell
 
@@ -43,6 +44,12 @@
 
 - (void)roundEdgesToMakeCircle {
     self.layer.cornerRadius = self.bounds.size.width/2.0;
+}
+
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    [self pop_removeAllAnimations];
 }
 
 /*
